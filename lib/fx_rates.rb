@@ -1,4 +1,6 @@
 require "fx_rates/version"
+require 'fx_rates/configuration'
+require 'moneta'
 
 module FxRates
   class ExchangeRate
@@ -16,7 +18,27 @@ module FxRates
     #
     # Returns the calculated value in the require currency.
     def self.at(date, from_country_code, to_country_code)
-      149.82751426 
+      store = FxRates.configuration.store
+
+      if store.key?(date)
+        rates = store[date]
+        base_rate = rates[from_country_code]
+        counter_rate = rates[to_country_code]
+
+        (counter_rate / base_rate) * 100
+      end
     end
+  end
+
+  class << self
+    attr_writer :configuration
+  end
+
+  def self.configuration
+    @configuration ||= Configuration.new
+  end
+
+  def self.configure
+    yield(configuration)
   end
 end
