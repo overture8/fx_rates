@@ -1,5 +1,7 @@
 require "fx_rates/version"
 require 'fx_rates/configuration'
+require 'fx_rates/api/parser/ecb'
+require 'fx_rates/railtie' if defined?(Rails)
 require 'moneta'
 
 module FxRates
