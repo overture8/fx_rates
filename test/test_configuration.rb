@@ -1,5 +1,5 @@
 require 'test_helper'
-require "api/parser/mock"
+require "fx_rates/api/parser/mock"
 require 'moneta'
 include FxRates
 
@@ -14,7 +14,7 @@ class TestConfiguration < Minitest::Test
   end
 
   def test_returns_api_with_correct_data
-    assert_equal ::FxRates.configuration.parser, Api::Parser::Mock
-    assert_equal ::FxRates.configuration.store, @store
+    assert_equal FxRates.configuration.parser, Api::Parser::Mock
+    assert_equal FxRates.configuration.store, @store
   end
 end

@@ -1,4 +1,4 @@
-require "api/parser/mock"
+require "fx_rates/api/parser/mock"
 require "moneta"
 
 module FxRates

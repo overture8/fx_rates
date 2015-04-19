@@ -1,6 +1,6 @@
 require 'test_helper'
-require "api/consumer"
-require "api/parser/mock"
+require "fx_rates/api/consumer"
+require "fx_rates/api/parser/mock"
 include FxRates
 
 class TestFxRates < Minitest::Test

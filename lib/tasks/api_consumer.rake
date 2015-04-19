@@ -1,5 +1,5 @@
-require "api/consumer"
-require "api/parser/ecb"
+require "fx_rates/api/consumer"
+require "fx_rates/api/parser/ecb"
 require 'fx_rates'
 include FxRates
 
