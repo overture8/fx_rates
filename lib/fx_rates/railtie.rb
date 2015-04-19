@@ -1,6 +1,7 @@
-require 'my_plugin'
+require 'fx_rates'
 require 'rails'
-module MyPlugin
+
+module FxRates
   class Railtie < Rails::Railtie
     railtie_name :FxRates
 
