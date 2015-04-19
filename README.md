@@ -26,13 +26,20 @@ require 'fx_rates'
 ExchangeRate.at(Date.today, 'GBP', 'USD')
 ````
 
+## Rake Task
+
+Can be ran by cron job to cache API data to key/value store
+
+    rake consume_api
+
 ## Configuration
 
 ```ruby
 require 'fx_rates'
+
 FxRates.configure do |config|
-  config.parser = Api::Parser::Ecb
-  config.store = Moneta.new(:File, dir: 'moneta')
+  config.parser = FxRates::Api::Parser::Ecb
+  config.store = Moneta.new(:File, dir: 'db/moneta')
 end
 ````
 
