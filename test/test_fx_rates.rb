@@ -1,10 +1,11 @@
 require 'test_helper'
 require "api/consumer"
 require "api/parser/mock"
+include FxRates
 
 class TestFxRates < Minitest::Test
   def setup
-    ::FxRates.configure do |config|
+    FxRates.configure do |config|
       config.parser = Api::Parser::Mock
       config.store = Moneta.new(:LRUHash)
     end
@@ -13,6 +14,7 @@ class TestFxRates < Minitest::Test
   end
 
   def test_correct_rate_calculated
-    assert_equal ::FxRates::ExchangeRate.at('2015-01-01', 'USD', 'JPY'), 11878.120954318476
+    date = Date.parse("2015-01-01")
+    assert_equal ExchangeRate.at(date, 'USD', 'JPY'), 11878.120954318476
   end
 end

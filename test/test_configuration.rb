@@ -1,12 +1,13 @@
 require 'test_helper'
 require "api/parser/mock"
 require 'moneta'
+include FxRates
 
 class TestConfiguration < Minitest::Test
   def setup
     @store = Moneta.new(:LRUHash)
 
-    ::FxRates.configure do |config|
+    FxRates.configure do |config|
       config.parser = Api::Parser::Mock
       config.store = @store
     end

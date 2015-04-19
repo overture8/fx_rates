@@ -1,16 +1,10 @@
 require "api/consumer"
 require "api/parser/ecb"
+require 'fx_rates'
+include FxRates
 
 desc "Consumes data from a given API, formats it and caches in a key/value store of your choice"
 task :consume_api do
-
-  # Pick your prefered key/value store
-  ::FxRates.configure do |config|
-    config.parser = Api::Parser::Ecb
-    config.store = Moneta.new(:LRUHash)
-  end
-
-  # Use API Strategy to get data
+  # Start consumer process
   Api::Consumer.new
-
 end

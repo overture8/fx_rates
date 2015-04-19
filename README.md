@@ -1,13 +1,14 @@
 # FxRates
 
-TODO: Write a gem description
+FxRates is a Ruby library that allows you to convert from one currency to another
+using exchange rates from a given service.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'fx_rates'
+gem 'fx-rates'
 ```
 
 And then execute:
@@ -16,11 +17,37 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install fx_rates
+    $ gem install fx-rates
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'fx_rates'
+ExchangeRate.at(Date.today, 'GBP', 'USD')
+````
+
+## Configuration
+
+```ruby
+require 'fx_rates'
+FxRates.configure do |config|
+  config.parser = Api::Parser::Ecb
+  config.store = Moneta.new(:File, dir: 'moneta')
+end
+````
+
+## Parsers
+
+FxRates provides a way for different API parsers to be integrated. See the `lib/api/parser`
+direct for examples of how to implement different strategies. Currently supported:-
+
+* ECB - [European Central Bank](http://www.ecb.europa.eu/stats/eurofxref/eurofxref­hist­90d.xml)
+
+## Stores
+
+The [Moneta](https://github.com/minad/moneta) library is used for providing a unified
+interface for key/value stores. This is to allow different key/value stores to be swapped
+in and out when required. See the moneta docs for a list of the available stores.
 
 ## Tests
 

@@ -4,12 +4,11 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'fx_rates/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "fx_rates"
+  spec.name          = "fx-rates"
   spec.version       = FxRates::VERSION
   spec.authors       = ["Phil McClure"]
   spec.email         = ["pmcclure@rumblelabs.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Currency conversion library}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -21,7 +20,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency "nokogiri", "~> 1.6.6"
   spec.add_dependency "moneta", "~> 0.8.0"
 
-  spec.add_development_dependency "minitest", "~> 5.5.1"
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
 end

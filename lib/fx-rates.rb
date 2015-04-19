@@ -34,10 +34,12 @@ module FxRates
     attr_writer :configuration
   end
 
+  # Provides singleton access to the Configuration instance.
   def self.configuration
     @configuration ||= Configuration.new
   end
 
+  # Allows some sugar for defining configuration using a block.
   def self.configure
     yield(configuration)
   end
