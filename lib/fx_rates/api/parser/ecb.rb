@@ -32,7 +32,7 @@ module FxRates
             date_str = snapshot.attr("time")
             date = Date.parse(date_str)
             last_date_processed(date)
-            if date <= @last_date_processed
+            if (date <= @last_date_processed) || @last_date_processed.nil?
               output = {}
               snapshot.children.each do |rate|
                 currency = rate.attr('currency')

@@ -27,7 +27,7 @@ module FxRates
         base_rate = rates[from_country_code]
         counter_rate = rates[to_country_code]
 
-        (counter_rate / base_rate) * 100
+        counter_rate / base_rate
       end
     end
   end

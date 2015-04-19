@@ -15,6 +15,6 @@ class TestFxRates < Minitest::Test
 
   def test_correct_rate_calculated
     date = Date.parse("2015-01-01")
-    assert_equal ExchangeRate.at(date, 'USD', 'JPY'), 11878.120954318476
+    assert_equal ExchangeRate.at(date, 'USD', 'JPY'), 118.78120954318476
   end
 end
