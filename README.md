@@ -8,7 +8,7 @@ using exchange rates from a given service.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'fx-rates'
+gem 'fx_rates'
 ```
 
 And then execute:
@@ -17,7 +17,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install fx-rates
+    $ gem install fx_rates
 
 ## Usage
 
