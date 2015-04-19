@@ -6,7 +6,7 @@ module FxRates
     railtie_name :FxRates
 
     rake_tasks do
-      load "tasks/api_consumer.rake"
+      load File::expand_path('./lib/fx_rates/tasks/api_consumer.rake')
     end
   end
 end
