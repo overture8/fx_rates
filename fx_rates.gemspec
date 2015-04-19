@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'fx_rates/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "fx-rates"
+  spec.name          = "fx_rates"
   spec.version       = FxRates::VERSION
   spec.authors       = ["Phil McClure"]
   spec.email         = ["pmcclure@rumblelabs.com"]
