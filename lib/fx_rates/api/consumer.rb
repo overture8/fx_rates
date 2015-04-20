@@ -1,4 +1,5 @@
 $:.unshift File.dirname(__FILE__)
+include FxRates
 
 module FxRates
   module Api
@@ -19,8 +20,8 @@ module FxRates
 
       def initialize(options={})
         @options = options
-        @options[:store] = ::FxRates.configuration.store
-        @options[:parser] = ::FxRates.configuration.parser
+        @options[:store] = FxRates.configuration.store
+        @options[:parser] = FxRates.configuration.parser
         parse
         @options[:store].close
       end
