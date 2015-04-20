@@ -44,9 +44,3 @@ be swapped in by written a new strategy.
   - Invalid rate (should be a number)
 
 * What code docmentation? http://tomdoc.org/?
-
-Web app thoughts
-================
-
-* Use Rails
-* UI - https://github.com/doabit/semantic-ui-sass
