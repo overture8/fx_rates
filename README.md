@@ -1,4 +1,7 @@
-# FxRates
+# FxRates 
+
+[![Build Status](https://travis-ci.org/overture8/fx_rates.svg?branch=master)](https://travis-ci.org/overture8/fx_rates)
+[![Code Climate](https://codeclimate.com/github/overture8/fx_rates/badges/gpa.svg)](https://codeclimate.com/github/overture8/fx_rates)
 
 FxRates is a Ruby library that allows you to convert from one currency to another
 using exchange rates from a given service.
