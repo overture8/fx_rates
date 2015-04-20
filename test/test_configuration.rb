@@ -1,3 +1,4 @@
+$:.unshift File.dirname(__FILE__)
 require 'test_helper'
 require "fx_rates/api/parser/mock"
 require 'moneta'
