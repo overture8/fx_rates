@@ -16,6 +16,7 @@ module FxRates
 
           @context.options[:store][date] = {
             "USD" => 1.0814,
+            "GBP" => "InvalidData",
             "JPY" => 128.45
           }
         end

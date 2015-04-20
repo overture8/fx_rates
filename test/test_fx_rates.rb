@@ -38,4 +38,12 @@ class TestFxRates < Minitest::Test
       ExchangeRate.at(date, 'JPY', invalid_counter_code) 
     }
   end
+
+
+  def test_exception_is_raised_when_rate_invalid_type
+    date = Date.parse("2015-01-01")
+    assert_raises(RateInvalidTypeError) { 
+      ExchangeRate.at(date, 'GBP', 'USD') # GBP is an invlid type.
+    }
+  end
 end

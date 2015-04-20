@@ -18,6 +18,15 @@ module FxRates
     end
   end
 
+  # Exception to be raised if either the base or counter currency
+  # code is of an invalid type. i.e. not numeric
+  class RateInvalidTypeError < StandardError
+    attr_reader :type
+    def initialize(type)
+      @type = type
+    end
+  end
+
   class ExchangeRate
     # Looks up the date from the key/value store then extract
     # the relevant base and counter rates to calculate the resulting
@@ -41,6 +50,8 @@ module FxRates
       counter_rate = rates[to_country_code]
       raise NoCurrencyCodeFoundError.new(:base) if base_rate.nil?
       raise NoCurrencyCodeFoundError.new(:counter) if counter_rate.nil?
+      raise RateInvalidTypeError.new(:base) unless base_rate.is_a? Numeric
+      raise RateInvalidTypeError.new(:counter) unless counter_rate.is_a? Numeric
 
       (counter_rate / base_rate).round(2)
     end
