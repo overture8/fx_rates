@@ -11,7 +11,7 @@ using exchange rates from a given service.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'fx_rates'
+gem 'fx_rates', github: 'overture8/fx_rates'
 ```
 
 And then execute:

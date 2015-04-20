@@ -35,7 +35,7 @@ be swapped in by written a new strategy.
 * How to calculate the currency conversion:-
   - (counter_curr / base_curr) * amount
 
-* Convert result to 2 decimal places
+* Leave rounding up to the calling code in the web app.
 
 * Exceptions for:
   - Date not found

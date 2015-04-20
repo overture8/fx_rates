@@ -53,7 +53,7 @@ module FxRates
       raise RateInvalidTypeError.new(:base) unless base_rate.is_a? Numeric
       raise RateInvalidTypeError.new(:counter) unless counter_rate.is_a? Numeric
 
-      (counter_rate / base_rate).round(2)
+      counter_rate / base_rate
     end
   end
 
